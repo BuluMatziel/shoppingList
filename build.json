@@ -1,0 +1,11 @@
+﻿{
+  "android": {
+    "release": {
+      "keystore": "c:\\dev\\MY-KEYSTORE-NAME.keystore",
+      "storePassword": "prkl1234",
+      "alias": "MY-ALIAS",
+      "password": "prkl1234",
+      "keystoreType": ""
+    }
+  }
+}

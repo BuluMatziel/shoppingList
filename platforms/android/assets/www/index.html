@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Shopping List App</title>
+    <style>
+        #titleAwesome {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 34px;
+            line-height: 24px;
+            z-index: 33;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="cover vertical-align-center indigo-200 align-center blend-soft-light has-header has-footer" id="bodyTheme">
+    <div class="header indigo-900" id="headerTheme">
+        <div class="menu blue-grey-500" id="myMenu">
+            <div class="list no-border">
+                <div class="item indigo-900 text-white" id="tabTitleTheme">
+                    <h1 class="left">Shopping list</h1>
+                </div>
+                <a class="item space-small" onclick="themeAlert()">
+                    <div class="left text-grey-300">
+                        <i class="ion-ios-gear-outline"></i>
+                        <h1>Change Theme</h1>
+                        <div class="hidden" id="template-alert-custom">
+                            <div class="list">
+                                <div class="item space-small">
+                                    <div class="left">
+                                        <input type="radio" name="user" onclick="themeBlue()" class="margin">
+                                    </div>
+                                    <div class="row padding">
+                                        <div class="col indigo-200">
+                                            -
+                                        </div>
+                                        <div class="col indigo-900">
+                                            -
+                                        </div>
+                                        <div class="col blue-grey-500">
+                                            -
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item space-small">
+                                    <div class="left">
+                                        <input type="radio" name="user" onclick="themeFall()" class="margin">
+                                    </div>
+                                    <div class="row padding">
+                                        <div class="col yellow-200">
+                                            -
+                                        </div>
+                                        <div class="col orange-400">
+                                            -
+                                        </div>
+                                        <div class="col red-200">
+                                            -
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item space-small">
+                                    <div class="left">
+                                        <input type="radio" name="user" onclick="themeDark()" class="margin">
+                                    </div>
+                                    <div class="row padding">
+                                        <div class="col blue-grey-800">
+                                            -
+                                        </div>
+                                        <div class="col black">
+                                            -
+                                        </div>
+                                        <div class="col grey-700">
+                                            -
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="item space-small" onclick="openPage('about')">
+                    <div class="left text-grey-300">
+                        <i class="ion-information-circled"></i>
+                        <h1>About</h1>
+                    </div>
+                </a>
+                <a class="item space-small" onclick="closeMenu('myMenu')">
+                    <div class="left text-grey-300">
+                        <i class="ion-ios-close"></i>
+                        <h1>Close menu</h1>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+        <div class="popover blue-grey-500" id="popover1">
+            <div class="list">
+                <div class="item" onclick="completeAll()"><h1 class="left">Complete all</h1></div>
+                <div class="item" onclick="uncompleteAll()"><h1 class="left">Uncomplete all</h1></div>
+                <div class="item" onclick="removeCompleted()"><h1 class="left">Remove completed</h1></div>
+                <div class="item" onclick="removeAll()"><h1 class="left">Remove all items</h1></div>
+            </div>
+        </div>
+        <div class="left">
+            <button class="icon ion-navicon-round" onclick="openMenu('myMenu')"></button>
+        </div>
+        <h1 id="titleAwesome">Shopping list</h1>
+        <div class="right">
+            <button class="icon ion-android-more-vertical" onclick="openPopover('popover1')"></button>
+        </div>
+    </div>
+    <div class="space"></div>
+    <h1 class="text-grey-100" id="calculator" style="font-family: 'Luckiest Guy', cursive;font-size:32px">Shopping completed: 0/0</h1>
+    <div class="space"></div>
+    <div id="rest" class="align-left">
+        <ul id="taskList"></ul>
+    </div>
+    <div class="vertical-align-center row indigo-900 footer" id="footerTheme">
+        <div class="padding radius-big border-grey-300 col-80">
+            <input class="text-grey-300 placeholder-white" type="text" id="text" placeholder="Insert a new item...">
+        </div>
+        <div class="align-center col">
+            <i class="icon ion-android-send margin white" id="add"></i>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="mobileui/mobileui.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
