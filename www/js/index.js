@@ -152,7 +152,7 @@ function themeBlue() { //different themes
     document.getElementById('calculator').classList.remove('text-grey-800', 'text-grey-300');
     document.getElementById('calculator').classList.add('text-grey-100');
     closeAlert('myAlert');
-    localStorage.setItem("color", "blue");
+    localStorage.setItem("color", "blue"); //updating theme to localStorage
     
 }
 
@@ -172,7 +172,7 @@ function themeFall() {
     document.getElementById('calculator').classList.remove('text-grey-100', 'text-grey-300');
     document.getElementById('calculator').classList.add('text-grey-800');
     closeAlert('myAlert');
-    localStorage.setItem("color", "fall");
+    localStorage.setItem("color", "fall"); //updating theme to localStorage
     
 }
 
@@ -192,7 +192,7 @@ function themeDark() {
     document.getElementById('calculator').classList.remove('text-grey-100', 'text-grey-800');
     document.getElementById('calculator').classList.add('text-grey-300');
     closeAlert('myAlert');
-    localStorage.setItem("color", "dark");
+    localStorage.setItem("color", "dark"); //updating theme to localStorage
 }
 
 
@@ -202,6 +202,8 @@ if (localStorage["list"]) { // checking, if there is something in localstorage
     ul.innerHTML = localStorage["list"]; 
     calculator();
 }
+
+//Checking the theme saved to localStorage
 
 if (localStorage.getItem("color") == "dark") {
     themeDark();
