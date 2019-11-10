@@ -41,12 +41,14 @@ function addTask(targetUl) { // this function adds the tasks to the target list
     targetUl.appendChild(li);
 
     calculator();
+    localStorage["list"] = ul.innerHTML // updating localstorage
 }
 
 function removeItem(item) { //Function to remove a single item by clicking the red icon
     parent = item.parentElement;
     item.parentNode.parentNode.removeChild(item.parentNode);
     calculator();
+    localStorage["list"] = ul.innerHTML // updating localstorage
 }
 
 function boxChecked(item) { //What happens when checking boxes
@@ -60,6 +62,7 @@ function boxChecked(item) { //What happens when checking boxes
         parent.classList.remove('checked');
     }
     calculator();
+    localStorage["list"] = ul.innerHTML // updating localstorage
 }
 
 function removeCompleted() { // remove all items that are set as completed
@@ -68,6 +71,7 @@ function removeCompleted() { // remove all items that are set as completed
         elem[0].parentNode.removeChild(elem[0]);
     }
     calculator();
+    localStorage["list"] = ul.innerHTML // updating localstorage
 }
 
 function completeAll(source) { // complete all tasks
@@ -82,6 +86,7 @@ function completeAll(source) { // complete all tasks
     }
 
     calculator();
+    localStorage["list"] = ul.innerHTML // updating localstorage
 }
 
 function uncompleteAll() { //uncomplete all tasks
@@ -95,12 +100,14 @@ function uncompleteAll() { //uncomplete all tasks
         }
     }
     calculator();
+    localStorage["list"] = ul.innerHTML // updating localstorage
 }
 
 
 function removeAll() { // Remove everything
     ul.innerHTML = '';
     calculator();
+    localStorage["list"] = ul.innerHTML // updating localstorage
 }
 
 function calculator() { //Calculate and display how many items exist and are completed
@@ -145,6 +152,8 @@ function themeBlue() { //different themes
     document.getElementById('calculator').classList.remove('text-grey-800', 'text-grey-300');
     document.getElementById('calculator').classList.add('text-grey-100');
     closeAlert('myAlert');
+    localStorage.setItem("color", "blue");
+    
 }
 
 function themeFall() {
@@ -163,6 +172,8 @@ function themeFall() {
     document.getElementById('calculator').classList.remove('text-grey-100', 'text-grey-300');
     document.getElementById('calculator').classList.add('text-grey-800');
     closeAlert('myAlert');
+    localStorage.setItem("color", "fall");
+    
 }
 
 function themeDark() {
@@ -181,4 +192,25 @@ function themeDark() {
     document.getElementById('calculator').classList.remove('text-grey-100', 'text-grey-800');
     document.getElementById('calculator').classList.add('text-grey-300');
     closeAlert('myAlert');
+    localStorage.setItem("color", "dark");
+}
+
+
+
+
+if (localStorage["list"]) { // checking, if there is something in localstorage
+    ul.innerHTML = localStorage["list"]; 
+    calculator();
+}
+
+if (localStorage.getItem("color") == "dark") {
+    themeDark();
+}
+
+if (localStorage.getItem("color") == "blue") {
+    themeBlue();
+}
+
+if (localStorage.getItem("color") == "fall") {
+    themeFall();
 }
