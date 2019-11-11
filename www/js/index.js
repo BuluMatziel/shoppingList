@@ -201,6 +201,7 @@ function themeDark() {
 if (localStorage["list"]) { // checking, if there is something in localstorage
     ul.innerHTML = localStorage["list"]; 
     calculator();
+    cbBugFix();
 }
 
 //Checking the theme saved to localStorage
@@ -215,4 +216,15 @@ if (localStorage.getItem("color") == "blue") {
 
 if (localStorage.getItem("color") == "fall") {
     themeFall();
+}
+
+
+function cbBugFix() {
+    bug = document.querySelectorAll('.checked');
+    for (i = 0; i < bug.length; i++) {
+        if (bug[i].classList.contains("checked")) {
+            bug[i].childNodes[0].checked = true;
+            calculator();
+        }
+    }      
 }
