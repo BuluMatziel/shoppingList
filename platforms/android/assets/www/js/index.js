@@ -218,6 +218,9 @@ if (localStorage.getItem("color") == "fall") {
     themeFall();
 }
 
+// This is a function to fix the bug that was caused when getting items from the database. 
+// Checkboxes' default value are "unchecked", so when getting completed items from the list, checkboxes were displayed uncorrectly. The calculator didn't work correctly either.
+// This function checks if the items have the class "checked", and if they do, their checkboxes are checked with this function.
 
 function cbBugFix() {
     bug = document.querySelectorAll('.checked');
