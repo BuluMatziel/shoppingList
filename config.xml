@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget id="io.cordova.hellocordova" version="2.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.hellocordova" version="2.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Shopping List App</name>
   <description>
         An app to make shopping lists
     </description>
-  <author email="dev@cordova.apache.org" href="http://cordova.io">Matias Kohanevic</author>
+  <author email="matiaskohanevic@gmail.com" href="http://cordova.io">Matias Kohanevic</author>
   <content src="index.html" />
   <preference name="DisallowOverscroll" value="true" />
   <plugin name="cordova-plugin-whitelist" spec="1" />
